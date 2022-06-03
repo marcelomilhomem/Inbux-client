@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Loginpage from "./pages/LoginPage";
+import Signuppage from "./pages/SignupPage";
+import Navbar from "./components/Navbar";
+import CoffeesPage from "./pages/CoffeesPage";
+import BrewingPage from "./pages/BrewingPage";
+import CoffeeDetails from "./pages/CoffeeDetails";
+import WelcomePage from "./pages/WelcomePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <CoffeesPage />
+      <Routes>
+        <Route path="/" element={<WelcomePage/>}/>
+        <Route path="/login" element={<Loginpage />} />
+        <Route path="/signup" element={<Signuppage />} />
+        <Route path="/brewing" element={<BrewingPage />} />
+        <Route path="/coffees" element={<CoffeesPage />} />
+        <Route path="/coffees/:coffeeId" element={<CoffeeDetails />} />
+      </Routes>
     </div>
   );
 }
