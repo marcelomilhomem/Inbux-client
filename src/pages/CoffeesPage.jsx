@@ -2,9 +2,10 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import CoffeeCard from "../components/CoffeeCard";
+import { Link } from "react-router-dom"
 
 function CoffeesPage() {
-  const [coffee, setCoffee] = useState([]);
+  const [coffees, setCoffees] = useState([]);
 
   const { getToken } = useContext(AuthContext);
 
@@ -17,7 +18,7 @@ function CoffeesPage() {
         },
       })
       .then((response) => {
-        setCoffee(response.data);
+        setCoffees(response.data);
       })
       .catch((err) => alert(err));
   };
@@ -25,10 +26,13 @@ function CoffeesPage() {
   return (
     <div>
       <button onClick={fetchApi}>Get Coffees</button>
-      {coffee.map((el) => {
+      {coffees.map((coffee) => {
         return (
             <>
-                <CoffeeCard {...el}/>
+                <CoffeeCard {...coffee}/>
+                <Link to={`/coffees/${coffee._id}`}>
+              <h3>{coffee.title}</h3>
+            </Link>
             </>
         )
       })}

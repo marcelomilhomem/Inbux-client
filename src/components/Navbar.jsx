@@ -17,7 +17,9 @@ function Navbar() {
             <button>Coffees</button>
           </Link>
           <button onClick={logoutUser}>Logout</button>
-          <p>{user.username}</p>
+          <Link to="/profile">
+          <button>{user.username}</button>
+          </Link>
         </>
       )}
 
