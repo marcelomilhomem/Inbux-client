@@ -18,6 +18,7 @@ function CoffeesPage() {
         },
       })
       .then((response) => {
+        console.log(response.data)
         setCoffees(response.data);
       })
       .catch((err) => alert(err));
@@ -32,6 +33,7 @@ function CoffeesPage() {
                 <CoffeeCard {...coffee}/>
                 <Link to={`/coffees/${coffee._id}`}>
               <h3>{coffee.title}</h3>
+              <h6>{coffee.origin}</h6>
             </Link>
             </>
         )

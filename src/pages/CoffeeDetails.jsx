@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import styled from "styled-components";
 
 function CoffeeDetails() {
   const [coffee, setCoffee] = useState(null);
@@ -30,14 +31,59 @@ function CoffeeDetails() {
     getCoffee();
   }, []);
 
+  const DetailTag = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+
+    span {
+      text-align: left;
+    }
+
+    .coffeeImg {
+      width: 170px;
+      height: 150px;
+      margin-top: 10px;
+    }
+
+    .firstDiv {
+      background-color: #1e3932;
+      width: 100vw;
+      color: white;
+    }
+
+    .secondDiv {
+      background-color: #f2f0eb;
+      height: 100vh;
+      width: 100vw;
+    }
+  `;
+
   return (
     <div>
       {coffee && (
-        <>
-          <h1>{coffee.title}</h1>
-          <h1>XICO</h1>
-          <button>Comment</button>
-        </>
+        <DetailTag>
+          <div className="firstDiv">
+               <img
+                className="coffeeImg"
+                src={coffee.coffeeImg}
+                alt="coffeeImg"
+              /> 
+            <h1>{coffee.title}</h1>
+            <p>Coffee Origin: {coffee.origin}</p>
+            <p>Processing: {coffee.processing}</p>
+            <p>Roast: {coffee.roast}</p>
+            <p>Body: {coffee.body}</p>
+            <p>Acidity: {coffee.acidity}</p>
+          </div>
+          <div className="secondDiv">
+            <p>More about:</p>
+            <p>{coffee.description}</p>
+            <button>Comment</button>
+          </div>
+        </DetailTag>
       )}
     </div>
   );
