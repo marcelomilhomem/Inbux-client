@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import styled from "styled-components";
+import CommentsPage from "../components/CommentsPage";
 
 function CoffeeDetails() {
   const [coffee, setCoffee] = useState(null);
@@ -66,11 +67,7 @@ function CoffeeDetails() {
       {coffee && (
         <DetailTag>
           <div className="firstDiv">
-               <img
-                className="coffeeImg"
-                src={coffee.coffeeImg}
-                alt="coffeeImg"
-              /> 
+            <img className="coffeeImg" src={coffee.coffeeImg} alt="coffeeImg" />
             <h1>{coffee.title}</h1>
             <p>Coffee Origin: {coffee.origin}</p>
             <p>Processing: {coffee.processing}</p>
@@ -82,6 +79,10 @@ function CoffeeDetails() {
             <p>More about:</p>
             <p>{coffee.description}</p>
             <button>Comment</button>
+            <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
+            {coffee.comments.map((el) => {
+              return <p>{el.comment}</p>;
+            })}
           </div>
         </DetailTag>
       )}

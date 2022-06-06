@@ -1,11 +1,13 @@
-import { createGlobalStyle } from 'styled-components';
- 
+import { createGlobalStyle } from "styled-components";
+
 const GlobalStyle = createGlobalStyle`
-  body {
+  * {
+    @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Babylonica&family=Bellefair&family=Dangrek&family=Montserrat:ital,wght@1,100&display=swap');
     margin: 0;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
   }
 `;
- 
+
 export default GlobalStyle;
