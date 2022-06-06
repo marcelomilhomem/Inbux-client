@@ -1,11 +1,37 @@
-import React from "react";
+import { useContext, useState, useNavigate } from "react";
+import axios from "axios";
+import { AuthContext } from "../context/auth.context";
 
 function UserProfile() {
-  return (
-    <div>
-      <p>Welcome</p>
-    </div>
-  );
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const body = { username, imgUrl };
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { username, imgUrl } = body
+
+    axios
+      .put(`${process.env.REACT_APP_API_URL}/user/${user._id}`, body)
+      .then((response) => {
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/profile");
+      })
+      .catch((err) => {
+        setErrorMessage(err.response.data.errorMessage);
+      });
+  };
+
+  return <div>
+    <form onSubmit={handleSubmit}>Edit</form>
+  </div>;
 }
 
 export default UserProfile;

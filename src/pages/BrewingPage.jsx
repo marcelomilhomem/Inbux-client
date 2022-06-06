@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import { Link } from "react-router-dom";
+import BrewingCard from "../components/BrewingCard";
 
 function BrewingPage() {
   const [brewing, setBrewing] = useState([]);
@@ -24,8 +26,15 @@ function BrewingPage() {
   return (
     <div>
       <button onClick={fetchApi}>Get Brewing</button>
-      {brewing.map((el) => {
-        return <h1>{el.title}</h1>;
+      {brewing.map((brew) => {
+        return (
+          <>
+            <BrewingCard key={brew._id} {...brew} />
+            <Link to={`/brewing/${brew._id}`}>
+              <h3>{brew.title}</h3>
+            </Link>
+          </>
+        );
       })}
     </div>
   );

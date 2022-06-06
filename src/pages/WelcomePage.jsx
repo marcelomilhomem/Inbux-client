@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 function WelcomePage() {
   const ButtonTag = styled.button`
     border: none;
-    background-color: #1E662E ;
+    background-color: #1e662e;
     color: white;
     border-radius: 20px;
     padding: 10px 25px;
   `;
   const HomeTag = styled.div`
     .welcomeDiv {
-      background-image: url("https://cms.artcenter.edu/image/11208/0/0");
+      background-image: url("https://images.unsplash.com/photo-1613399421011-1e634fa4dacc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
       background-size: cover;
+      background-position: center;
       color: white;
       height: 100vh;
     }
@@ -35,12 +36,28 @@ function WelcomePage() {
     h1 {
       margin-top: 10px;
     }
+
+    .quote {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 70vh;
+    }
+
+    .coffeeTreeImg {
+      width: 250px;
+      border-radius: 10px;
+    }
   `;
 
   return (
     <HomeTag>
       <div className="welcomeDiv">
-        {/* <p>Learning is a Journey, not a destination</p> */}
+        <h1 className="quote">Learning is a Journey, not a destination</h1>
+        <Link to="/signup">
+          <ButtonTag>Join us</ButtonTag>
+        </Link>
       </div>
       <div className="firstSection">
         <h1>ABOUT US</h1>
@@ -58,9 +75,10 @@ function WelcomePage() {
           <ButtonTag>Coffees</ButtonTag>
         </Link>
       </div>
+      <hr />
       <div>
         <p>Suggestions</p>
-        <img src="" alt="" />
+        <img className="coffeeTreeImg" src="https://images.unsplash.com/photo-1586095516671-d085ff58cdd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="coffeeTree" />
         <p>
           Its hard to provide all the information that I wanted. Thats why you
           guys can help me leaving a suggestions in the suggestion page.

@@ -9,6 +9,7 @@ import CoffeeDetails from "./pages/CoffeeDetails";
 import WelcomePage from "./pages/WelcomePage";
 import UserProfile from "./pages/UserProfile";
 import GlobalStyle from "./components/GlobalStyles";
+import BrewingDetails from "./pages/BrewingDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/signup" element={<Signuppage />} />
         <Route path="/brewing" element={<BrewingPage />} />
+        <Route path="/brewing/:brewingId" element={<BrewingDetails/>}/>
         <Route path="/coffees" element={<CoffeesPage />} />
         <Route path="/coffees/:coffeeId" element={<CoffeeDetails />} />
         <Route path="/profile" element={<UserProfile />} />

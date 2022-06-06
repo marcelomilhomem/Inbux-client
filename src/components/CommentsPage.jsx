@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import styled from "styled-components";
 
 function CommentsPage(props) {
   const [comment, setComment] = useState("");
@@ -33,8 +34,9 @@ function CommentsPage(props) {
       .catch((err) => console.log(err));
   };
 
+
   return (
-    <div className="AddProject">
+    <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="comment">Your Comment</label>
         <textarea

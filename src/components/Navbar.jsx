@@ -8,9 +8,9 @@ function Navbar() {
 
   const ButtonTag = styled.button`
     border: none;
-    background: white;
-    color: black;
+    color: white;
     font-weight: bold;
+    font-size: 25px;
   `;
 
   const NavTag = styled.div`
@@ -160,7 +160,15 @@ function Navbar() {
     }
 
     .logo {
-      color: #1E662E;
+      color: #1e662e;
+    }
+
+    .myButton {
+      border: none;
+      background: none;
+      color: black;
+      font-weight: bold;
+      font-size: 25px;
     }
   `;
 
@@ -186,20 +194,25 @@ function Navbar() {
                 <Link to="/coffees">
                   <ButtonTag>Coffees</ButtonTag>
                 </Link>
-                <ButtonTag onClick={logoutUser}>Logout</ButtonTag>
+                <Link to="/brewing">
+                  <ButtonTag>Brewing</ButtonTag>
+                </Link>
                 <Link to="/profile">
                   <ButtonTag>{user.username}</ButtonTag>
                 </Link>
+                <button className="myButton" onClick={logoutUser}>
+                  Logout
+                </button>
               </>
             )}
 
             {!isLoggedIn && (
               <>
                 <Link to="/signup">
-                  <ButtonTag>Signup</ButtonTag>
+                  <button className="myButton">Signup</button>
                 </Link>
                 <Link to="/login">
-                  <ButtonTag>Login</ButtonTag>
+                  <button className="myButton">Login</button>
                 </Link>
               </>
             )}

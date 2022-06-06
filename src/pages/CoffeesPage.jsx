@@ -30,7 +30,7 @@ function CoffeesPage() {
       {coffees.map((coffee) => {
         return (
             <>
-                <CoffeeCard {...coffee}/>
+                <CoffeeCard key={coffee._id} {...coffee}/>
                 <Link to={`/coffees/${coffee._id}`}>
               <h3>{coffee.title}</h3>
               <h6>{coffee.origin}</h6>

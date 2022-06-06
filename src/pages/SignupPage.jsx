@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Signuppage() {
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function Signuppage() {
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, body)
       .then(() => {
-        navigate('/login');
+        navigate("/login");
       })
       .catch((err) => {
         setErrorMessage(err.response.data.errorMessage);
@@ -33,10 +33,20 @@ function Signuppage() {
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
-        <input type="text" name="username" value={username} onChange={handleUsername} />
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleUsername}
+        />
 
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
 
         <button type="submit">Sign Up</button>
       </form>
