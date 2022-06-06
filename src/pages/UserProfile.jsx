@@ -30,7 +30,7 @@ function UserProfile() {
   };
 
   return <div>
-    <form onSubmit={handleSubmit}>Edit</form>
+    <button onSubmit={handleSubmit}>Edit</button>
   </div>;
 }
 

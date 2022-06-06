@@ -9,8 +9,17 @@ function WelcomePage() {
     color: white;
     border-radius: 20px;
     padding: 10px 25px;
+
+    &:hover {
+      background-color: #1e3932;
+    }
   `;
   const HomeTag = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+
     .welcomeDiv {
       background-image: url("https://images.unsplash.com/photo-1613399421011-1e634fa4dacc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
       background-size: cover;
@@ -19,7 +28,7 @@ function WelcomePage() {
       height: 100vh;
     }
 
-    .pikeImg {
+    .Img {
       width: 280px;
       height: 280px;
     }
@@ -30,11 +39,6 @@ function WelcomePage() {
       gap: 2rem;
       flex-direction: column;
       align-items: center;
-      justify-content: space-evenly;
-    }
-
-    h1 {
-      margin-top: 10px;
     }
 
     .quote {
@@ -45,9 +49,25 @@ function WelcomePage() {
       height: 70vh;
     }
 
-    .coffeeTreeImg {
-      width: 250px;
-      border-radius: 10px;
+    .coffeImage {
+      height: 100vh;
+      width: 100vh;
+    }
+
+    .secondSection {
+      background-color: #1e3932;
+      color: white;
+    }
+
+    .suggestion {
+      margin-top: 20px;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+    }
+
+    .suggestion-text {
+      margin-bottom: 30px;
+      width: 300px;
     }
   `;
 
@@ -60,29 +80,33 @@ function WelcomePage() {
         </Link>
       </div>
       <div className="firstSection">
-        <h1>ABOUT US</h1>
+        <h1>A LITTLE ABOUT US</h1>
         <img
-          className="pikeImg"
+          className="Img"
           src="https://i.pinimg.com/564x/80/c5/79/80c579eb8382503040adc20f5891a0a4.jpg"
           alt="marketImg"
         />
-        <p>
+        <div className="suggestion-text">
           The purpose of this site is to have all Starbucks core coffees and
           share as much information as possible. And also learn more from the
           comments of other users.
-        </p>
+        </div>
         <Link to="/coffees">
           <ButtonTag>Coffees</ButtonTag>
         </Link>
+        <p>12 Coffess</p>
       </div>
-      <hr />
-      <div>
-        <p>Suggestions</p>
-        <img className="coffeeTreeImg" src="https://images.unsplash.com/photo-1586095516671-d085ff58cdd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="coffeeTree" />
-        <p>
-          Its hard to provide all the information that I wanted. Thats why you
-          guys can help me leaving a suggestions in the suggestion page.
-        </p>
+      <div className="firstSection secondSection">
+        <p className="suggestion">Suggestions</p>
+        <img
+          className="coffeeImage"
+          src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt="coffeImage"
+        />
+        <div className="suggestion-text">
+          Its hard to provide all the information that we wanted. Thats why you
+          guys can help us leaving suggestions in the suggestion page.
+        </div>
       </div>
     </HomeTag>
   );

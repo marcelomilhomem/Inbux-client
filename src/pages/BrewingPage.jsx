@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
@@ -23,9 +23,12 @@ function BrewingPage() {
       .catch((err) => alert(err));
   };
 
+  useEffect(() => {
+    fetchApi();
+  }, []);
+  
   return (
     <div>
-      <button onClick={fetchApi}>Get Brewing</button>
       {brewing.map((brew) => {
         return (
           <>

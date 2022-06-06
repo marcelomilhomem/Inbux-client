@@ -43,16 +43,17 @@ function CoffeeDetails() {
       text-align: left;
     }
 
-    .coffeeImg {
-      width: 170px;
-      height: 150px;
-      margin-top: 10px;
+    .ImageDiv {
+      background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/sumatra-women-02-1.jpg");
+      background-size: cover;
+      width: 380px;
+      height: 400px;
+      background-position: center;
     }
 
     .firstDiv {
-      background-color: #1e3932;
-      width: 100vw;
-      color: white;
+      width: 350px;
+      color: black;
     }
 
     .secondDiv {
@@ -67,13 +68,10 @@ function CoffeeDetails() {
       {coffee && (
         <DetailTag>
           <div className="firstDiv">
-            <img className="coffeeImg" src={coffee.coffeeImg} alt="coffeeImg" />
             <h1>{coffee.title}</h1>
-            <p>Coffee Origin: {coffee.origin}</p>
-            <p>Processing: {coffee.processing}</p>
-            <p>Roast: {coffee.roast}</p>
-            <p>Body: {coffee.body}</p>
-            <p>Acidity: {coffee.acidity}</p>
+            <div className="ImageDiv"></div>
+            {coffee.origin} |{coffee.processing} |{coffee.roast} |{coffee.body}
+            |{coffee.acidity} |
           </div>
           <div className="secondDiv">
             <p>More about:</p>
