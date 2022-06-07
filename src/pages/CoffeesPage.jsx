@@ -5,6 +5,15 @@ import CoffeeCard from "../components/CoffeeCard";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const LinkTag = styled.div`
+  .coffeeLink {
+    text-decoration: none;
+    color: white;
+  }
+
+  background-color: #1e3932;
+`;
+
 function CoffeesPage() {
   const [coffees, setCoffees] = useState([]);
 
@@ -29,15 +38,6 @@ function CoffeesPage() {
     fetchApi();
   }, []);
 
-  const LinkTag = styled.div`
-    .coffeeLink {
-      text-decoration: none;
-      color: white;
-    }
-
-    background-color: #1e3932;
-  `;
-
   return (
     <div>
       {coffees.map((coffee) => {
@@ -45,7 +45,10 @@ function CoffeesPage() {
           <>
             <CoffeeCard key={coffee._id} {...coffee} />
             <LinkTag>
-              <Link to={`/coffees/${coffee._id}`} style={{ textDecoration: 'none' }}>
+              <Link
+                to={`/coffees/${coffee._id}`}
+                style={{ textDecoration: "none" }}
+              >
                 <h3 className="coffeeLink">{coffee.title}</h3>
                 <h6 className="coffeeLink">{coffee.origin}</h6>
               </Link>

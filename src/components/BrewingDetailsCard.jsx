@@ -29,36 +29,46 @@ function BrewingDetailsCard(props) {
       <div className="information">
         <hr />
         <table>
-          <tr>
-            <th>
-              <b className="title">Coffee Grind</b>
-            </th>
-            <th className="info">{props.brew.coffeeGrind}</th>
-          </tr>
-          <tr>
-            <th>
-              <b className="title">Quantity</b>
-            </th>
-            <th className="info">{props.brew.quantity}</th>
-          </tr>
-          <tr>
-            <th>
-              <b className="title">Exatration Time</b>
-            </th>
-            <th className="info">{props.brew.extractionTime}min</th>
-          </tr>
-          <tr>
-            <th>
-              <b className="title">Water Temperature</b>
-            </th>
-            <th className="info">{props.brew.waterTemperature}°C</th>
-          </tr>
-          <tr>
-            <th>
-              <b className="title">Advice</b>
-            </th>
-            <th className="info">{props.brew.advice}</th>
-          </tr>
+          <tbody>
+            <tr>
+              <th>
+                <b className="title">Coffee Grind</b>
+              </th>
+              <th className="info">{props.brew.coffeeGrind}</th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <th>
+                <b className="title">Quantity</b>
+              </th>
+              <th className="info">{props.brew.quantity}</th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <th>
+                <b className="title">Exatration Time</b>
+              </th>
+              <th className="info">{props.brew.extractionTime}min</th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <th>
+                <b className="title">Water Temperature</b>
+              </th>
+              <th className="info">{props.brew.waterTemperature}°C</th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <th>
+                <b className="title">Advice</b>
+              </th>
+              <th className="info">{props.brew.advice}</th>
+            </tr>
+          </tbody>
         </table>
       </div>
     </DetailTag>

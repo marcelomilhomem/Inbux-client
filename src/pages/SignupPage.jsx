@@ -3,6 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
+const FormDiv = styled.div`
+  display: flex;
+`;
+
 function Signuppage() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -28,56 +32,31 @@ function Signuppage() {
       });
   };
 
-  const Input = styled.input`
-    border: none;
-    width: 200px;
-    height: 36px;
-  `;
-
-  const Div = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 80vh;
-    gap: 1rem;
-
-    button {
-      width: max-content;
-      background: none;
-      border: none;
-    }
-  `;
-
   return (
-    <Div className="SignupPage">
+    <FormDiv>
       <h1>Sign Up</h1>
-      <Input
-        type="text"
-        name="username"
-        value={username}
-        onChange={handleUsername}
-        placeholder="Username"
-      />
-      <Input
-        type="password"
-        name="password"
-        value={password}
-        onChange={handlePassword}
-        placeholder="Password"
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Sign Up
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={username}
+          onChange={handleUsername}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={handlePassword}
+        />
+        <button type="submit">Sign Up</button>
+      </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <p>Already have an account?</p>
-      <Link to="/login" style={{ textDecoration: "none" }}>
-        {" "}
-        Login
-      </Link>
-    </Div>
+      <Link to="/login"> Login</Link>
+    </FormDiv>
   );
 }
 

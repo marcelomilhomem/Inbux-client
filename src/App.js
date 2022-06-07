@@ -8,14 +8,12 @@ import BrewingPage from "./pages/BrewingPage";
 import CoffeeDetails from "./pages/CoffeeDetails";
 import WelcomePage from "./pages/WelcomePage";
 import UserProfile from "./pages/UserProfile";
-import GlobalStyle from "./components/GlobalStyles";
 import BrewingDetails from "./pages/BrewingDetails";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <GlobalStyle/>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/login" element={<Loginpage />} />

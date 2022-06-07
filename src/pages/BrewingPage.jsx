@@ -5,6 +5,20 @@ import { Link } from "react-router-dom";
 import BrewingCard from "../components/BrewingCard";
 import styled from "styled-components";
 
+const Button = styled.button`
+  border: none;
+  background-color: #1e662e;
+  color: white;
+
+  &:hover {
+    background-color: #1e3932;
+  }
+`;
+
+const ButtonDiv = styled.div`
+  background-color: #1e662e;
+`;
+
 function BrewingPage() {
   const [brewing, setBrewing] = useState([]);
 
@@ -27,20 +41,6 @@ function BrewingPage() {
   useEffect(() => {
     fetchApi();
   }, []);
-
-  const Button = styled.button`
-    border: none;
-    background-color: #1e662e;
-    color: white;
-
-    &:hover {
-      background-color: #1e3932;
-    }
-  `;
-
-  const ButtonDiv = styled.div`
-    background-color: #1e662e;
-  `;
 
   return (
     <div>
