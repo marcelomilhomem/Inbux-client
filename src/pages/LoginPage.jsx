@@ -33,39 +33,55 @@ function Loginpage() {
       });
   };
 
-  const divLogin = styled.div`
+  const Input = styled.input`
+    border: none;
+    width: 200px;
+    height: 36px;
+  `;
+
+  const Div = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 80vh;
+    gap: 1rem;
+
+    button {
+      width: max-content;
+      background: none;
+      border: none;
+    }
   `;
 
   return (
-    <divLogin>
-      <h1>Login</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input
+    <div>
+      <Div>
+        <h1>Login</h1>
+        <Input
           type="text"
           name="username"
           placeholder="Username"
           value={username}
           onChange={handleUsername}
         />
-        <input
+        <Input
           type="password"
           placeholder="Password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
+        <button onClick={handleSubmit} type="submit">
+          Login
+        </button>
 
-        <button type="submit">Login</button>
-      </form>
-
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <p>Don't have an account?</p>
-      <Link to="/signup"> Sign up</Link>
-    </divLogin>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <p>Don't have an account?</p>
+        <Link to="/signup" style={{ textDecoration: 'none' }}> Sign up</Link>
+      </Div>
+    </div>
   );
 }
 

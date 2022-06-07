@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import BrewingCard from "../components/BrewingCard";
+import styled from "styled-components";
 
 function BrewingPage() {
   const [brewing, setBrewing] = useState([]);
@@ -26,15 +27,36 @@ function BrewingPage() {
   useEffect(() => {
     fetchApi();
   }, []);
-  
+
+  const Button = styled.button`
+    border: none;
+    background-color: #1e662e;
+    color: white;
+
+    &:hover {
+      background-color: #1e3932;
+    }
+  `;
+
+  const ButtonDiv = styled.div`
+    background-color: #1e662e;
+  `;
+
   return (
     <div>
+      <h1>BREWING GUIDE</h1>
       {brewing.map((brew) => {
         return (
           <>
-            <BrewingCard key={brew._id} {...brew} />
-            <Link to={`/brewing/${brew._id}`}>
-              <h3>{brew.title}</h3>
+            {" "}
+            <Link
+              to={`/brewing/${brew._id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <BrewingCard key={brew._id} {...brew} />
+              <ButtonDiv>
+                <Button className="brew-title">{brew.title}</Button>
+              </ButtonDiv>
             </Link>
           </>
         );

@@ -15,7 +15,7 @@ function UserProfile() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, imgUrl } = body
+    const { username, imgUrl } = body;
 
     axios
       .put(`${process.env.REACT_APP_API_URL}/user/${user._id}`, body)
@@ -29,9 +29,13 @@ function UserProfile() {
       });
   };
 
-  return <div>
-    <button onSubmit={handleSubmit}>Edit</button>
-  </div>;
+  return (
+    <div>
+      <img src={imgUrl} alt="" />
+      <h1>{username}</h1>
+      <button onSubmit={handleSubmit}>Edit</button>
+    </div>
+  );
 }
 
 export default UserProfile;

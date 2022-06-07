@@ -49,9 +49,9 @@ function WelcomePage() {
       height: 70vh;
     }
 
-    .coffeImage {
-      height: 100vh;
-      width: 100vh;
+    .coffeeImage {
+      height: 400px;
+      width: 280px;
     }
 
     .secondSection {
@@ -60,9 +60,7 @@ function WelcomePage() {
     }
 
     .suggestion {
-      margin-top: 20px;
-      border-bottom: 1px solid white;
-      padding-bottom: 5px;
+      margin-top: 5px;
     }
 
     .suggestion-text {
@@ -97,7 +95,7 @@ function WelcomePage() {
         <p>12 Coffess</p>
       </div>
       <div className="firstSection secondSection">
-        <p className="suggestion">Suggestions</p>
+        <h1 className="quotes suggestion">SUGGESTIONS</h1>
         <img
           className="coffeeImage"
           src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"

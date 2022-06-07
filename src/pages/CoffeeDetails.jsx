@@ -32,6 +32,8 @@ function CoffeeDetails() {
     getCoffee();
   }, []);
 
+
+
   const DetailTag = styled.div`
     display: flex;
     flex-direction: column;
@@ -70,14 +72,15 @@ function CoffeeDetails() {
           <div className="firstDiv">
             <h1>{coffee.title}</h1>
             <div className="ImageDiv"></div>
-            {coffee.origin} |{coffee.processing} |{coffee.roast} |{coffee.body}
-            |{coffee.acidity} |
+            {coffee.origin} |{coffee.processing} |{coffee.roast} |{coffee.body}|
+            {coffee.acidity} |
           </div>
           <div className="secondDiv">
             <p>More about:</p>
             <p>{coffee.description}</p>
             <button>Comment</button>
             <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
+            <button onClick={() => (coffee._id)}>X</button>
             {coffee.comments.map((el) => {
               return <p>{el.comment}</p>;
             })}
@@ -89,3 +92,4 @@ function CoffeeDetails() {
 }
 
 export default CoffeeDetails;
+
