@@ -2,25 +2,33 @@ import styled from "styled-components";
 import React from "react";
 
 const CardTag = styled.div`
-  width: 100vw;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-color: #1e3932;
-  color: white;
-  
+
   .coffeeImg {
     width: 140px;
     height: 120px;
+  }
+
+  .img {
+    width: 140px;
+  }
+
+  .title {
+    width: 140px;
   }
 `;
 
 function CoffeeCard(props) {
   return (
     <CardTag>
+      <div className="img">
         <img className="coffeeImg" src={props.coffeeImg} alt="coffeeImage" />
-        <span>{props.origin}</span>
+      </div>
+      <div className="title">
+        <h3 className="coffeeLink">{props.title}</h3>
+      </div>
     </CardTag>
   );
 }

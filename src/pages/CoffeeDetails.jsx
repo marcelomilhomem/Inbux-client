@@ -80,7 +80,7 @@ function CoffeeDetails() {
             <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
             <button onClick={() => coffee._id}>X</button>
             {coffee.comments.map((el) => {
-              return <p>{el.comment}</p>;
+              return <p key={el.comment._id}>{el.comment}</p>;
             })}
           </div>
         </DetailTag>

@@ -8,10 +8,22 @@ import styled from "styled-components";
 const LinkTag = styled.div`
   .coffeeLink {
     text-decoration: none;
-    color: white;
+    color: black;
   }
 
-  background-color: #1e3932;
+  &:hover {
+    background-color: #6a816f;
+  }
+`;
+
+const DivT = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1 {
+    margin-top: 20px;
+  }
 `;
 
 function CoffeesPage() {
@@ -39,24 +51,23 @@ function CoffeesPage() {
   }, []);
 
   return (
-    <div>
+    <DivT>
+      <h1>Ours Coffee's</h1>
       {coffees.map((coffee) => {
         return (
           <>
-            <CoffeeCard key={coffee._id} {...coffee} />
             <LinkTag>
               <Link
                 to={`/coffees/${coffee._id}`}
                 style={{ textDecoration: "none" }}
               >
-                <h3 className="coffeeLink">{coffee.title}</h3>
-                <h6 className="coffeeLink">{coffee.origin}</h6>
+                <CoffeeCard key={coffee._id} {...coffee} />
               </Link>
             </LinkTag>
           </>
         );
       })}
-    </div>
+    </DivT>
   );
 }
 

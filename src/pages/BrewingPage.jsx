@@ -7,8 +7,9 @@ import styled from "styled-components";
 
 const Button = styled.button`
   border: none;
-  background-color: #1e662e;
-  color: white;
+  background-color: white;
+  color: black;
+  font-size: 35px;
 
   &:hover {
     background-color: #1e3932;
@@ -16,7 +17,8 @@ const Button = styled.button`
 `;
 
 const ButtonDiv = styled.div`
-  background-color: #1e662e;
+  background-color: white;
+  display: flex;
 `;
 
 function BrewingPage() {
@@ -44,7 +46,6 @@ function BrewingPage() {
 
   return (
     <div>
-      <h1>BREWING GUIDE</h1>
       {brewing.map((brew) => {
         return (
           <>

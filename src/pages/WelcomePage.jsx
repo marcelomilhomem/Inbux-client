@@ -20,7 +20,7 @@ const HomeTag = styled.div`
   gap: 1rem;
 
   .welcomeDiv {
-    background-image: url("https://images.unsplash.com/photo-1542372147193-a7aca54189cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    background-image: url("https://images.unsplash.com/photo-1606197180326-bd0bae1eec71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80");
     background-size: cover;
     background-position: center;
     color: white;
@@ -30,6 +30,7 @@ const HomeTag = styled.div`
   .Img {
     width: 280px;
     height: 280px;
+    border-radius: 50%;
   }
 
   .firstSection {
@@ -48,11 +49,6 @@ const HomeTag = styled.div`
     height: 70vh;
   }
 
-  .coffeeImage {
-    height: 400px;
-    width: 280px;
-  }
-
   .secondSection {
     background-color: #f2f0eb;
     color: white;
@@ -61,6 +57,9 @@ const HomeTag = styled.div`
   .suggestion {
     margin-top: 5px;
     color: black;
+    &:hover {
+      border-bottom: 10px solid black;
+    }
   }
 
   .suggestion-text {
@@ -90,7 +89,8 @@ function WelcomePage() {
         <div className="suggestion-text">
           The purpose of this site is to have all Starbucks core coffees and
           share as much information as possible. And also learn more from the
-          comments of other users. I worked 5 years in Starbucks I think this will be very useful.
+          comments of other users. I worked 5 years in Starbucks I think this
+          will be very useful.
         </div>
         <Link to="/coffees">
           <ButtonTag>Coffees</ButtonTag>
@@ -98,12 +98,9 @@ function WelcomePage() {
         <p>12 Coffess</p>
       </div>
       <div className="firstSection secondSection">
-        <h1 className="quotes suggestion">SUGGESTIONS</h1>
-        <img
-          className="coffeeImage"
-          src="https://images.unsplash.com/photo-1535246785412-526b774dd1ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-          alt="coffeImage"
-        />
+        <Link to="#" style={{ textDecoration: "none" }}>
+          <h1 className="quotes suggestion">SUGGESTIONS</h1>
+        </Link>
         <div className="suggestion-text">
           Its hard to provide all the information that we wanted. Thats why you
           guys can help us leaving suggestions in the suggestion page.
