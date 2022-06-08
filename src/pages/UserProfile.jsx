@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import EditUserForm from "../components/EditUserForm";
 import styled from "styled-components";
+import SuggestionList from "./SuggestionList";
 
 const ImgSize = styled.img`
   width: 200px;
@@ -30,7 +31,7 @@ const ButtonEdit = styled.button`
   border-radius: 6px;
 
   &:hover {
-    background-color: #C7DDCC;
+    background-color: #c7ddcc;
   }
 `;
 
@@ -71,6 +72,7 @@ function UserProfile() {
           </ButtonEdit>
 
           {showForm && <EditUserForm currentUser={currentUser} />}
+          {currentUser.userType === "admin" && <SuggestionList />}
         </ProfileDiv>
       )}
     </>

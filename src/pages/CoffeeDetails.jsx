@@ -10,8 +10,11 @@ const DetailTag = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-radius: 15px;
   gap: 1rem;
+  background-image: url("https://stories.starbucks.com/uploads/2019/01/artist-series-1-002-1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 
   span {
     text-align: left;
@@ -25,7 +28,6 @@ const DetailTag = styled.div`
   .secondDiv {
     background-color: #f2f0eb;
     height: max-content;
-    width: 80vw;
     text-align: left;
     padding: 25px;
   }
@@ -54,17 +56,41 @@ const DetailTag = styled.div`
 const CommentsDiv = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #fcfcfc;
+  background-color: rgba(255, 255, 255, 0.3);
   gap: 1rem;
-  padding: 10px;
-  border-radius: 10px;
-`;
+  padding: 20px;
+  border-radius: 10px;`;
 
 const AllComments = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  background-color: white;
+  padding: 7px;
+  border-radius: 6px;
+
+  .user-profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+`;
+
+const UserDiv = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const UserNameComment = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  .user-name {
+    font-size: 12px;
+  }
 `;
 
 function CoffeeDetails() {
@@ -93,6 +119,8 @@ function CoffeeDetails() {
   useEffect(() => {
     getCoffee();
   }, []);
+
+  console.log(coffee);
 
   return (
     <div>
@@ -142,7 +170,19 @@ function CoffeeDetails() {
             <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
             <AllComments>
               {coffee.comments.map((comment) => {
-                return <p key={comment.comment._id}>{comment.comment}</p>;
+                return (
+                  <UserDiv>
+                    <img
+                      className="user-profile-image"
+                      src={comment.author.imgUrl}
+                      alt="userprofileimage"
+                    />
+                    <UserNameComment>
+                      <p className="user-name">{comment.author.username}</p>
+                      <p key={comment.comment._id}>{comment.comment}</p>
+                    </UserNameComment>
+                  </UserDiv>
+                );
               })}
             </AllComments>
           </CommentsDiv>

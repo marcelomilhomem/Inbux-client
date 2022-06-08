@@ -27,6 +27,7 @@ const LoginDiv = styled.div`
 
   h1 {
     font-size: 80px;
+    color: #FFAE01;
   }
 `;
 
