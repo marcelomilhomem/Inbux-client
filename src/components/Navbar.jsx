@@ -196,6 +196,9 @@ function Navbar() {
                 <Link to="/brewing">
                   <ButtonTag>Brewing</ButtonTag>
                 </Link>
+                <Link to="/submit-suggestion">
+                  <ButtonTag>Leave Suggestion</ButtonTag>
+                </Link>
                 <Link to="/profile">
                   <ButtonTag>{user.username}</ButtonTag>
                 </Link>

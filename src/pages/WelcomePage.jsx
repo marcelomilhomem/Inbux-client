@@ -101,6 +101,10 @@ function WelcomePage() {
         </Link>
         <p>12 Coffess</p>
       </div>
+      <div>
+        <h1>Site inspired Tristan Eaton</h1>
+        <img src="" alt="" />
+      </div>
       <div className="firstSection secondSection">
         <h1 className="quotes suggestion">SUGGESTIONS</h1>
         <div className="suggestion-text">

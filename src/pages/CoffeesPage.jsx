@@ -16,7 +16,8 @@ const DivT = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-image: url("https://i.pinimg.com/564x/14/eb/75/14eb75ce5f6315f5f2b4f446c16c9aba.jpg");
+  background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
+  /* background-image: url("https://i.pinimg.com/564x/14/eb/75/14eb75ce5f6315f5f2b4f446c16c9aba.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
 

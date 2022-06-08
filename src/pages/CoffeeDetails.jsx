@@ -51,6 +51,10 @@ const DetailTag = styled.div`
   .info {
     font-size: 10px;
   }
+
+  table {
+    background-color: white;;
+  }
 `;
 
 const CommentsDiv = styled.div`
@@ -59,7 +63,8 @@ const CommentsDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.3);
   gap: 1rem;
   padding: 20px;
-  border-radius: 10px;`;
+  border-radius: 10px;
+`;
 
 const AllComments = styled.div`
   display: flex;

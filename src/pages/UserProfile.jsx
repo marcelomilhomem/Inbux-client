@@ -84,10 +84,6 @@ function UserProfile() {
             {showForm && <EditUserForm currentUser={currentUser} />}
             {currentUser.userType === "admin" && <SuggestionList />}
           </ProfileDiv>
-          <img
-            src="https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-003-1.jpg"
-            alt="ola"
-          />
         </Center>
       )}
     </>

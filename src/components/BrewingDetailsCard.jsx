@@ -17,6 +17,7 @@ const DetailTag = styled.div`
   .info {
     font-size: 10px;
   }
+
 `;
 
 function BrewingDetailsCard(props) {

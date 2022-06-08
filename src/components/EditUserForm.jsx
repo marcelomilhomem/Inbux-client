@@ -39,8 +39,6 @@ const FormDiv = styled.div`
     background-color: #ececec;
     padding: 10px 35px;
     border-radius: 6px;
-    width: 100vw;
-    height: 100vh;
   }
 
 `;

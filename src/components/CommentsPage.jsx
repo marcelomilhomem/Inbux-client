@@ -19,6 +19,10 @@ const Button = styled.button`
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
   color: #eac67a;
+
+  &:hover {
+    background-color: #f2f0eb;
+  }
 `;
 
 const Form = styled.form`
