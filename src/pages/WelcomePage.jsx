@@ -20,7 +20,7 @@ const HomeTag = styled.div`
   gap: 1rem;
 
   .welcomeDiv {
-    background-image: url("https://images.unsplash.com/photo-1606197180326-bd0bae1eec71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80");
+    background-image: url("https://stories.starbucks.com/_next/image/?url=https%3A%2F%2Fstories.starbucks.com%2Fuploads%2Fsites%2F29%2F2022%2F03%2FMercy-Corps-Indonesia_-coffee-female-farmer-in-West-Java.jpg&w=1920&q=75");
     background-size: cover;
     background-position: center;
     color: white;
@@ -28,9 +28,9 @@ const HomeTag = styled.div`
   }
 
   .Img {
-    width: 280px;
+    width: 350px;
     height: 280px;
-    border-radius: 50%;
+    border-radius: 30%;
   }
 
   .firstSection {
@@ -83,7 +83,7 @@ function WelcomePage() {
         <h1>A LITTLE ABOUT US</h1>
         <img
           className="Img"
-          src="https://i.pinimg.com/564x/80/c5/79/80c579eb8382503040adc20f5891a0a4.jpg"
+          src="https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-021-1.jpg"
           alt="marketImg"
         />
         <div className="suggestion-text">
@@ -91,6 +91,7 @@ function WelcomePage() {
           share as much information as possible. And also learn more from the
           comments of other users. I worked 5 years in Starbucks I think this
           will be very useful.
+          <p></p>About me: Sumatra is my favourite coffee.
         </div>
         <Link to="/coffees">
           <ButtonTag>Coffees</ButtonTag>
