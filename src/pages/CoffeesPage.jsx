@@ -10,16 +10,15 @@ const LinkTag = styled.div`
     text-decoration: none;
     color: black;
   }
-
-  &:hover {
-    background-color: #6a816f;
-  }
 `;
 
 const DivT = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-image: url("https://i.pinimg.com/564x/14/eb/75/14eb75ce5f6315f5f2b4f446c16c9aba.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   h1 {
     margin-top: 20px;

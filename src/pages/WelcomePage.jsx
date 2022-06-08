@@ -67,6 +67,9 @@ const HomeTag = styled.div`
     width: 300px;
     color: black;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
 
@@ -99,12 +102,13 @@ function WelcomePage() {
         <p>12 Coffess</p>
       </div>
       <div className="firstSection secondSection">
-        <Link to="#" style={{ textDecoration: "none" }}>
-          <h1 className="quotes suggestion">SUGGESTIONS</h1>
-        </Link>
+        <h1 className="quotes suggestion">SUGGESTIONS</h1>
         <div className="suggestion-text">
           Its hard to provide all the information that we wanted. Thats why you
           guys can help us leaving suggestions in the suggestion page.
+          <Link to="/submit-suggestion">
+            <ButtonTag>Leave a Suggestion</ButtonTag>
+          </Link>
         </div>
       </div>
     </HomeTag>

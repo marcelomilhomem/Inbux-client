@@ -16,14 +16,16 @@ const ProfileDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80vw;
+  height: 80vh;
   gap: 2rem;
   margin: 10px;
-  width: 90vw;
-  height: 80vh;
+  background-color: white;
+  border-radius: 10px;
 `;
 
 const ButtonEdit = styled.button`
-  background-color: #678d70;
+  background-color: #f6b630;
   padding: 10px 15px;
   border: none;
   color: white;
@@ -31,8 +33,15 @@ const ButtonEdit = styled.button`
   border-radius: 6px;
 
   &:hover {
-    background-color: #c7ddcc;
+    background-color: #eac67a;
   }
+`;
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;
 
 function UserProfile() {
@@ -64,16 +73,22 @@ function UserProfile() {
   return (
     <>
       {currentUser && (
-        <ProfileDiv>
-          <h1>Hello, {currentUser.username}</h1>
-          <ImgSize src={currentUser.imgUrl} alt="userImage" />
-          <ButtonEdit onClick={() => setShowForm(!showForm)}>
-            {showForm ? "Hide Edit Form" : "Edit User"}
-          </ButtonEdit>
+        <Center>
+          <ProfileDiv>
+            <h1>Hello, {currentUser.username}</h1>
+            <ImgSize src={currentUser.imgUrl} alt="userImage" />
+            <ButtonEdit onClick={() => setShowForm(!showForm)}>
+              {showForm ? "Hide Edit Form" : "Edit User"}
+            </ButtonEdit>
 
-          {showForm && <EditUserForm currentUser={currentUser} />}
-          {currentUser.userType === "admin" && <SuggestionList />}
-        </ProfileDiv>
+            {showForm && <EditUserForm currentUser={currentUser} />}
+            {currentUser.userType === "admin" && <SuggestionList />}
+          </ProfileDiv>
+          <img
+            src="https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-003-1.jpg"
+            alt="ola"
+          />
+        </Center>
       )}
     </>
   );
