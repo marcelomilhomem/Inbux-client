@@ -11,17 +11,10 @@ const DetailTag = styled.div`
   align-items: center;
   justify-content: space-between;
   border-radius: 15px;
+  gap: 1rem;
 
   span {
     text-align: left;
-  }
-
-  .ImageDiv {
-    background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/sumatra-women-02-1.jpg");
-    background-size: cover;
-    width: 380px;
-    height: 400px;
-    background-position: center;
   }
 
   .firstDiv {
@@ -31,9 +24,47 @@ const DetailTag = styled.div`
 
   .secondDiv {
     background-color: #f2f0eb;
-    height: 100vh;
-    width: 100vw;
+    height: max-content;
+    width: 80vw;
+    text-align: left;
+    padding: 25px;
   }
+
+  .secondDiv > p {
+    margin-top: 8px;
+  }
+
+  .information {
+    text-align: left;
+  }
+
+  th {
+    padding: 5px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .info {
+    font-size: 10px;
+  }
+`;
+
+const CommentsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  gap: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+`;
+
+const AllComments = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 `;
 
 function CoffeeDetails() {
@@ -67,22 +98,54 @@ function CoffeeDetails() {
     <div>
       {coffee && (
         <DetailTag>
-          <div className="firstDiv">
-            <h1>{coffee.title}</h1>
-            <div className="ImageDiv"></div>
-            {coffee.origin} |{coffee.processing} |{coffee.roast} |{coffee.body}|
-            {coffee.acidity} |
+          <h1>{coffee.title}</h1>
+          <div className="information">
+            <table>
+              <tbody>
+                <tr>
+                  <th className="title">Origin:</th>
+                  <th className="info">{coffee.origin}</th>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th className="title">Processing:</th>
+                  <th className="info">{coffee.processing}</th>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th className="title">Roast:</th>
+                  <th className="info">{coffee.roast}</th>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th className="title">Acidity:</th>
+                  <th className="info">{coffee.acidity}</th>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th className="title">Body:</th>
+                  <th className="info">{coffee.body}</th>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
           <div className="secondDiv">
-            <p>More about:</p>
+            <h1>About</h1>
             <p>{coffee.description}</p>
-            <button>Comment</button>
-            <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
-            <button onClick={() => coffee._id}>X</button>
-            {coffee.comments.map((el) => {
-              return <p key={el.comment._id}>{el.comment}</p>;
-            })}
           </div>
+          <CommentsDiv>
+            <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
+            <AllComments>
+              {coffee.comments.map((comment) => {
+                return <p key={comment.comment._id}>{comment.comment}</p>;
+              })}
+            </AllComments>
+          </CommentsDiv>
         </DetailTag>
       )}
     </div>

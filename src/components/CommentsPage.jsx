@@ -1,6 +1,25 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import styled from "styled-components";
+
+const TextArea = styled.textarea`
+  width: 220px;
+  height: 30px;
+  border: none;
+`;
+
+const Button = styled.button`
+  border: none;
+  background: none;
+`;
+
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+`;
 
 function CommentsPage(props) {
   const [comment, setComment] = useState("");
@@ -35,18 +54,19 @@ function CommentsPage(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="comment">Your Comment</label>
-        <textarea
+      <Form onSubmit={handleSubmit}>
+        <label htmlFor="comment">Img</label>
+        <TextArea
           name="comment"
           cols="30"
           rows="10"
+          placeholder="Write your comment here."
           value={comment}
           onChange={handleComment}
-        ></textarea>
+        ></TextArea>
 
-        <button type="submit">Comment</button>
-      </form>
+        <Button type="submit">Comment</Button>
+      </Form>
     </div>
   );
 }
