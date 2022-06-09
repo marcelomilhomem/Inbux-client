@@ -61,6 +61,12 @@ const DetailTag = styled.div`
     width: 250px;
     border-radius: 6px;
   }
+
+  .coffee-title {
+    margin-top: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 `;
 
 const CommentsDiv = styled.div`
@@ -70,7 +76,7 @@ const CommentsDiv = styled.div`
   gap: 1rem;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  width: 80%;
   height: 350px;
   overflow-y: scroll;
   margin-bottom: 30px;
@@ -109,7 +115,7 @@ const UserNameComment = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 200px;
+  width: 90%;
   border-top: 0.3px solid black;
   border-color: rgba(0, 0, 0, 0.1);
 
@@ -120,6 +126,19 @@ const UserNameComment = styled.div`
   .text-comment {
     font-size: 13px;
   }
+`;
+
+const CoffeTable = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+
+  @media (min-width: 650px) {
+    flex-direction: row;
+  }
+  
 `;
 
 function CoffeeDetails() {
@@ -169,46 +188,48 @@ function CoffeeDetails() {
     <div>
       {coffee && (
         <DetailTag>
-          <h1>{coffee.title}</h1>
-          <img
-            className="coffeeDetailImg"
-            src={coffee.detailImg}
-            alt="coffeImageDescription"
-          />
-          <div className="information">
-            <table>
-              <tbody>
-                <tr>
-                  <th className="title">Origin:</th>
-                  <th className="info">{coffee.origin}</th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th className="title">Processing:</th>
-                  <th className="info">{coffee.processing}</th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th className="title">Roast:</th>
-                  <th className="info">{coffee.roast}</th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th className="title">Acidity:</th>
-                  <th className="info">{coffee.acidity}</th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th className="title">Body:</th>
-                  <th className="info">{coffee.body}</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <h1 className="coffee-title">{coffee.title}</h1>
+          <CoffeTable>
+            <img
+              className="coffeeDetailImg"
+              src={coffee.detailImg}
+              alt="coffeImageDescription"
+            />
+            <div className="information">
+              <table>
+                <tbody>
+                  <tr>
+                    <th className="title">Origin:</th>
+                    <th className="info">{coffee.origin}</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th className="title">Processing:</th>
+                    <th className="info">{coffee.processing}</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th className="title">Roast:</th>
+                    <th className="info">{coffee.roast}</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th className="title">Acidity:</th>
+                    <th className="info">{coffee.acidity}</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th className="title">Body:</th>
+                    <th className="info">{coffee.body}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CoffeTable>
 
           <div className="secondDiv">
             <h1>About</h1>

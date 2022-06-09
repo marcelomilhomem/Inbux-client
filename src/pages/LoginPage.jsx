@@ -16,18 +16,19 @@ const LoginDiv = styled.div`
   background-position: center;
 
   .signup {
-    background-color: white;
+    background-color: #1e662e;
     width: 235px;
     align-self: center;
     border-radius: 6px;
     padding: 20px 10px;
     align-self: center;
     border-radius: 180px;
+    color: white;
   }
 
   h1 {
-    font-size: 80px;
-    color: #FFAE01;
+    font-size: 50px;
+    color: white;
   }
 `;
 
@@ -45,6 +46,7 @@ const LoginColumn = styled.div`
   height: 500px;
   padding-top: 30px;
   border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.7);
 `;
 
 const Input1 = styled.input`

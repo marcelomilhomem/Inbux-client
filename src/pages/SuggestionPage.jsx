@@ -11,8 +11,8 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   border: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
+  background-color: #1e662e;
+  padding: 10px 15px;
   color: white;
   border-radius: 10px;
 

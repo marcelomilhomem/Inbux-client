@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import styled from "styled-components";
 
 const TextArea = styled.textarea`
-  width: 220px;
+  width: 90%;
   height: 30px;
   border: none;
   border-radius: 6px;
@@ -13,12 +13,18 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  border: none;
+  /* border: none;
   background: white;
   padding: 3px;
   border-radius: 6px;
   color: #eac67a;
-  margin: 5px;
+  margin: 5px; */
+  border: none;
+  background-color: #1e662e;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
 
   &:hover {
     background-color: #f2f0eb;
@@ -30,7 +36,6 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 `;
 
 function CommentsPage(props) {

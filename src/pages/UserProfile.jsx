@@ -25,7 +25,7 @@ const ProfileDiv = styled.div`
 `;
 
 const ButtonEdit = styled.button`
-  background-color: #f6b630;
+  background-color: #1e662e;
   padding: 10px 15px;
   border: none;
   color: white;
@@ -33,7 +33,7 @@ const ButtonEdit = styled.button`
   border-radius: 6px;
 
   &:hover {
-    background-color: #eac67a;
+    background-color: black;
   }
 `;
 

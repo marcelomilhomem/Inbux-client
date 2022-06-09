@@ -17,7 +17,6 @@ const DivT = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
 
   h1 {

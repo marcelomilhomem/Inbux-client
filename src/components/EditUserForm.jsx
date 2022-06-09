@@ -9,10 +9,6 @@ const FormDiv = styled.div`
   align-items: center;
   gap: 1rem;
 
-  input[type="file"] {
-    display: none;
-  }
-
   form {
     display: flex;
     flex-direction: column;
@@ -22,12 +18,13 @@ const FormDiv = styled.div`
   }
 
   .upload {
+    display: none;
+  }
+
+  .uploadI {
     background-color: #ececec;
-    padding: 10px 35px;
+    padding: 10px 45px;
     border-radius: 6px;
-    &:hover {
-      background-color: white;
-    }
   }
 
   .textI {
@@ -40,7 +37,6 @@ const FormDiv = styled.div`
     padding: 10px 63px;
     border-radius: 6px;
   }
-
 `;
 
 function EditUserForm({ currentUser }) {
@@ -100,10 +96,17 @@ function EditUserForm({ currentUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label className="upload" htmlFor="file">
-          Upload Image
+        <label className="uploadI">
+          Select Image
+          <p>
+            <i class="fa-solid fa-camera"></i>
+          </p>
+          <input
+            className="upload"
+            type="file"
+            onChange={(e) => handleUpload(e)}
+          />
         </label>
-        <input type="file" onChange={(e) => handleUpload(e)} />
         <button type="submit">Edit User</button>
       </form>
     </FormDiv>

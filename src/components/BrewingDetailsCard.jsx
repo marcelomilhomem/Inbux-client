@@ -18,13 +18,19 @@ const DetailTag = styled.div`
     font-size: 10px;
   }
 
+  .test {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
 `;
 
 function BrewingDetailsCard(props) {
   return (
     <DetailTag>
-      <div>
-        <img src={props.brew.image} alt="brewImage" />
+      <div className="test">
+        <img className="test" src={props.brew.image} alt="brewImage" />
         <h1>{props.brew.title}</h1>
       </div>
       <div className="information">
