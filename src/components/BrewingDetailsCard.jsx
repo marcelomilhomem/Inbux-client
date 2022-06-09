@@ -23,6 +23,10 @@ const DetailTag = styled.div`
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+
+    @media (min-width: 650px) {
+      width: 50%;
+    }
   }
 `;
 

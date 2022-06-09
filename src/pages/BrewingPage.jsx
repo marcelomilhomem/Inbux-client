@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const Button = styled.button`
   border: none;
-  background: none;
+  background-color: white;
   color: black;
   font-size: 35px;
   &:hover {
@@ -17,6 +17,7 @@ const Button = styled.button`
 
 const ButtonDiv = styled.div`
   display: flex;
+  background-color: white;
   justify-content: center;
 
   &:hover {
@@ -31,10 +32,15 @@ const BrewDiv = styled.div`
   align-items: center;
   width: auto;
   height: 90vh;
+  gap: 2rem;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/52d26cede4b02dafb0c7af72/1397613144314-1PA9PX4SM7I4D93XM3TD/AlexLoft_Mural+detail2+%5BFinalDay%5D.jpg?format=1500w");
+  background-attachment: fixed;
+  background-position: center;
 
   @media (min-width: 650px) {
     flex-direction: row;
     gap: 2rem;
+    flex-wrap: wrap;
   }
 `;
 
@@ -43,6 +49,10 @@ const DivColumn = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/52d26cede4b02dafb0c7af72/1397613144314-1PA9PX4SM7I4D93XM3TD/AlexLoft_Mural+detail2+%5BFinalDay%5D.jpg?format=1500w");
+  background-attachment: fixed;
+  background-position: center;
+  width: auto;
 `;
 
 const EachBrew = styled.div`
@@ -50,7 +60,7 @@ const EachBrew = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("https://images.squarespace-cdn.com/content/v1/52d26cede4b02dafb0c7af72/1397613144314-1PA9PX4SM7I4D93XM3TD/AlexLoft_Mural+detail2+%5BFinalDay%5D.jpg?format=1500w");
+  width: auto;
 `;
 
 function BrewingPage() {
