@@ -108,6 +108,10 @@ const HomeTag = styled.div`
     gap: 1rem;
   }
 
+  .sug {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
   .tristan-div {
     display: flex;
     flex-direction: column;
@@ -188,8 +192,8 @@ function WelcomePage() {
         </div>
         <hr />
         <div className="firstSection secondSection">
-          <h1 className="quotes suggestion">SUGGESTIONS</h1>
-          <div className="suggestion-text">
+          <h1 className="quotes suggestion sug">SUGGESTIONS</h1>
+          <div className="suggestion-text sug">
             Its hard to provide all the information that we wanted. Thats why
             you guys can help us leaving suggestions in the suggestion page.
             {isLoggedIn && (
