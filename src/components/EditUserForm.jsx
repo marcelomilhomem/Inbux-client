@@ -37,7 +37,7 @@ const FormDiv = styled.div`
   button {
     border: none;
     background-color: #ececec;
-    padding: 10px 35px;
+    padding: 10px 63px;
     border-radius: 6px;
   }
 

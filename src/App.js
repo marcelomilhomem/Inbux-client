@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Loginpage from "./pages/LoginPage";
 import Signuppage from "./pages/SignupPage";
-import Navbar from "./components/Navbar";
+import Navbar2 from "./components/Navbar2";
 import CoffeesPage from "./pages/CoffeesPage";
 import BrewingPage from "./pages/BrewingPage";
 import CoffeeDetails from "./pages/CoffeeDetails";
@@ -15,7 +15,7 @@ import SuggestionList from "./pages/SuggestionList";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+    <Navbar2/>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/login" element={<Loginpage />} />

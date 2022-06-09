@@ -19,8 +19,15 @@ const HomeTag = styled.div`
   flex-direction: column;
   gap: 1rem;
 
+  .tristan {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
   .welcomeDiv {
-    background-image: url("https://stories.starbucks.com/_next/image/?url=https%3A%2F%2Fstories.starbucks.com%2Fuploads%2Fsites%2F29%2F2022%2F03%2FMercy-Corps-Indonesia_-coffee-female-farmer-in-West-Java.jpg&w=1920&q=75");
+    background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-004-1.jpg");
     background-size: cover;
     background-position: center;
     color: white;
@@ -71,6 +78,27 @@ const HomeTag = styled.div`
     flex-direction: column;
     gap: 1rem;
   }
+
+  .tristan-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tristanLink {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    width: max-content;
+    padding: 5px;
+    border-radius: 10px;
+    &:hover {
+      background-color: #1e3932;
+      color: white;
+    }
+  }
 `;
 
 function WelcomePage() {
@@ -101,10 +129,24 @@ function WelcomePage() {
         </Link>
         <p>12 Coffess</p>
       </div>
-      <div>
-        <h1>Site inspired Tristan Eaton</h1>
-        <img src="" alt="" />
+      <hr />
+      <div className="tristan-div">
+        <p>Site style inspired in</p>
+        <a
+          className="tristanLink"
+          href="https://www.tristaneaton.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Tristan Eaton
+        </a>
+        <img
+          className="tristan"
+          src="https://stories.starbucks.com/wp-content/uploads/2019/01/sumatra-1905-1.jpg"
+          alt=""
+        />
       </div>
+      <hr />
       <div className="firstSection secondSection">
         <h1 className="quotes suggestion">SUGGESTIONS</h1>
         <div className="suggestion-text">

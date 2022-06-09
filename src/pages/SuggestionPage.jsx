@@ -11,7 +11,7 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   border: none;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px;
   color: white;
   border-radius: 10px;
@@ -19,7 +19,6 @@ const Button = styled.button`
   &:hover {
     background-color: black;
   }
-
 `;
 
 const Div = styled.div`
@@ -38,13 +37,18 @@ const Form = styled.form`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  background-color: rgba(255,255,255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 6px;
 
   input {
-    width: 200px;
+    width: 220px;
     height: 25px;
+    border-radius: 6px;
+  }
+
+  p {
+    width: 250px;
   }
 `;
 
@@ -71,6 +75,7 @@ function SuggestionPage() {
       })
       .then(() => {
         setComment("");
+        setName("");
       })
       .catch((err) => console.log(err));
   };
@@ -78,7 +83,9 @@ function SuggestionPage() {
   return (
     <Div>
       <Form onSubmit={handleSubmit}>
-        <label htmlFor="name">First&Last Name</label>
+        <p>
+          Please leave your comments and suggestion for us to improve. Thank You
+        </p>
         <input
           type="name"
           name="name"

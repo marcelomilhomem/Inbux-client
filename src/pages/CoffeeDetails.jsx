@@ -12,7 +12,6 @@ const DetailTag = styled.div`
   justify-content: space-between;
   gap: 1rem;
   background-image: url("https://stories.starbucks.com/uploads/2019/01/artist-series-1-002-1.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 
@@ -64,6 +63,7 @@ const CommentsDiv = styled.div`
   gap: 1rem;
   padding: 20px;
   border-radius: 10px;
+  width: 300px;
 `;
 
 const AllComments = styled.div`
@@ -92,6 +92,7 @@ const UserNameComment = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  width: 240px;
 
   .user-name {
     font-size: 12px;
