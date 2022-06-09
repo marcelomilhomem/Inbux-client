@@ -11,7 +11,12 @@ const DetailTag = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background-image: url("https://stories.starbucks.com/uploads/2019/01/artist-series-1-002-1.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 252, 0.52),
+      rgba(255, 255, 255, 0.73)
+    ),
+    url("https://stories.starbucks.com/uploads/2019/01/artist-series-1-002-1.jpg");
   background-attachment: fixed;
   background-position: center;
 
@@ -60,12 +65,6 @@ const DetailTag = styled.div`
   .coffeeDetailImg {
     width: 250px;
     border-radius: 6px;
-  }
-
-  .coffee-title {
-    margin-top: 5px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
   }
 `;
 
@@ -138,7 +137,6 @@ const CoffeTable = styled.div`
   @media (min-width: 650px) {
     flex-direction: row;
   }
-  
 `;
 
 function CoffeeDetails() {
@@ -188,7 +186,7 @@ function CoffeeDetails() {
     <div>
       {coffee && (
         <DetailTag>
-          <h1 className="coffee-title">{coffee.title}</h1>
+          <h1>{coffee.title}</h1>
           <CoffeTable>
             <img
               className="coffeeDetailImg"

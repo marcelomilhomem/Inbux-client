@@ -88,7 +88,7 @@ const HomeTag = styled.div`
   }
 
   .secondSection {
-    background-image: url("https://images.squarespace-cdn.com/content/v1/52d26cede4b02dafb0c7af72/1594844798967-OGPSDG4MLCSJGRZO7AWN/Final+Mural+photo+by+Matt+Eaton.jpg?format=1500w");
+    background-image:linear-gradient(to bottom, rgba(255, 255, 252, 0.52), rgba(255, 255, 255, 0.73)), url("https://images.squarespace-cdn.com/content/v1/52d26cede4b02dafb0c7af72/1594844798967-OGPSDG4MLCSJGRZO7AWN/Final+Mural+photo+by+Matt+Eaton.jpg?format=1500w");
     background-position: center;
     color: white;
   }
@@ -106,10 +106,6 @@ const HomeTag = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .sug {
-    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .tristan-div {
