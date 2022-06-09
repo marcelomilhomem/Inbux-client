@@ -14,7 +14,7 @@ const DetailTag = styled.div`
   background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 252, 0.52),
-      rgba(255, 255, 255, 0.73)
+      rgba(0, 0, 0, 0.73)
     ),
     url("https://stories.starbucks.com/uploads/2019/01/artist-series-1-002-1.jpg");
   background-attachment: fixed;
