@@ -7,18 +7,18 @@ const TextArea = styled.textarea`
   width: 220px;
   height: 30px;
   border: none;
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px;
   background-color: white;
+  margin: 5px;
 `;
 
 const Button = styled.button`
   border: none;
   background: white;
-  padding: 7px;
-  border-bottom-right-radius: 6px;
-  border-top-right-radius: 6px;
+  padding: 3px;
+  border-radius: 6px;
   color: #eac67a;
+  margin: 5px;
 
   &:hover {
     background-color: #f2f0eb;
@@ -27,8 +27,10 @@ const Button = styled.button`
 
 const Form = styled.form`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
 `;
 
 function CommentsPage(props) {
@@ -73,8 +75,9 @@ function CommentsPage(props) {
           value={comment}
           onChange={handleComment}
         ></TextArea>
-
-        <Button type="submit">Submit</Button>
+        <div className="ddd">
+          <Button type="submit">Submit</Button>
+        </div>
       </Form>
     </div>
   );

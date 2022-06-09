@@ -29,6 +29,8 @@ const DetailTag = styled.div`
     height: max-content;
     text-align: left;
     padding: 25px;
+    height: 400px;
+    overflow-y: scroll;
   }
 
   .secondDiv > p {
@@ -52,7 +54,12 @@ const DetailTag = styled.div`
   }
 
   table {
-    background-color: white;;
+    background-color: white;
+  }
+
+  .coffeeDetailImg {
+    width: 250px;
+    border-radius: 6px;
   }
 `;
 
@@ -64,6 +71,9 @@ const CommentsDiv = styled.div`
   padding: 20px;
   border-radius: 10px;
   width: 300px;
+  height: 350px;
+  overflow-y: scroll;
+  margin-bottom: 30px;
 `;
 
 const AllComments = styled.div`
@@ -80,6 +90,14 @@ const AllComments = styled.div`
     height: 40px;
     border-radius: 50%;
   }
+
+  .delete-button {
+    background: none;
+    font-size: 9px;
+    border: none;
+    padding: 3px;
+    border-radius: 50%;
+  }
 `;
 
 const UserDiv = styled.div`
@@ -91,11 +109,16 @@ const UserNameComment = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
-  width: 240px;
+  width: 200px;
+  border-top: 0.3px solid black;
+  border-color: rgba(0, 0, 0, 0.1);
 
   .user-name {
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .text-comment {
+    font-size: 13px;
   }
 `;
 
@@ -103,11 +126,11 @@ function CoffeeDetails() {
   const [coffee, setCoffee] = useState(null);
   const { coffeeId } = useParams();
 
-  const { getToken } = useContext(AuthContext);
+  const { getToken, user } = useContext(AuthContext);
+  const token = getToken();
 
   const getCoffee = async () => {
     try {
-      const token = getToken();
       let response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/coffees/${coffeeId}`,
         {
@@ -117,6 +140,22 @@ function CoffeeDetails() {
         }
       );
       setCoffee(response.data);
+      /* await coffee.comments.reverse(); */
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteComment = async (commentId) => {
+    try {
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/api/comment/${commentId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
     } catch (error) {
       console.log(error);
     }
@@ -124,15 +163,18 @@ function CoffeeDetails() {
 
   useEffect(() => {
     getCoffee();
-  }, []);
-
-  console.log(coffee);
+  }, [deleteComment]);
 
   return (
     <div>
       {coffee && (
         <DetailTag>
           <h1>{coffee.title}</h1>
+          <img
+            className="coffeeDetailImg"
+            src={coffee.detailImg}
+            alt="coffeImageDescription"
+          />
           <div className="information">
             <table>
               <tbody>
@@ -175,21 +217,33 @@ function CoffeeDetails() {
           <CommentsDiv>
             <CommentsPage coffeeId={coffee._id} getCoffee={getCoffee} />
             <AllComments>
-              {coffee.comments.map((comment) => {
-                return (
-                  <UserDiv>
-                    <img
-                      className="user-profile-image"
-                      src={comment.author.imgUrl}
-                      alt="userprofileimage"
-                    />
-                    <UserNameComment>
-                      <p className="user-name">{comment.author.username}</p>
-                      <p key={comment.comment._id}>{comment.comment}</p>
-                    </UserNameComment>
-                  </UserDiv>
-                );
-              })}
+              {coffee.comments
+                .map((comment) => {
+                  return (
+                    <UserDiv>
+                      <img
+                        className="user-profile-image"
+                        src={comment.author.imgUrl}
+                        alt="userprofileimage"
+                      />
+                      <UserNameComment>
+                        <p className="user-name">{comment.author.username}</p>
+                        <p className="text-comment" key={comment.comment._id}>
+                          {comment.comment}
+                        </p>
+                        {comment.author._id === user._id && (
+                          <button
+                            className="delete-button"
+                            onClick={() => deleteComment(comment._id)}
+                          >
+                            Delete Comment
+                          </button>
+                        )}
+                      </UserNameComment>
+                    </UserDiv>
+                  );
+                })
+                .reverse()}
             </AllComments>
           </CommentsDiv>
         </DetailTag>

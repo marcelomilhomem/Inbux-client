@@ -1,15 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Navbar2() {
   const { isLoggedIn, user, logoutUser } = useContext(AuthContext);
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar collapseOnSelect bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="/">Inbux</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          Inbux
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,18 +22,30 @@ function Navbar2() {
             <Nav.Link href="/">Home</Nav.Link>
             {isLoggedIn && (
               <>
-                <Nav.Link href="/coffees">Coffees</Nav.Link>
-                <Nav.Link href="/brewing">Brewing</Nav.Link>
-                <Nav.Link href="/submit-suggestion">Leave Suggestion</Nav.Link>
-                <Nav.Link href="/profile">{user.username}</Nav.Link>
+                <Nav.Link eventKey="0" as={Link} to="/coffees">
+                  Coffees
+                </Nav.Link>
+                <Nav.Link eventKey="1" as={Link} to="/brewing">
+                  Brewing
+                </Nav.Link>
+                <Nav.Link eventKey="2" as={Link} to="/submit-suggestion">
+                  Leave Suggestion
+                </Nav.Link>
+                <Nav.Link eventKey="3" as={Link} to="/profile">
+                  {user.username}
+                </Nav.Link>
                 <Nav.Link onClick={logoutUser}>Logout</Nav.Link>
               </>
             )}
 
             {!isLoggedIn && (
               <>
-                <Nav.Link href="/signup">Signup</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link eventKey="4" as={Link} to="/signup">
+                  Signup
+                </Nav.Link>
+                <Nav.Link eventKey="5" as={Link} to="/login">
+                  Login
+                </Nav.Link>
               </>
             )}
           </Nav>

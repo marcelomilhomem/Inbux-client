@@ -10,12 +10,19 @@ const Button = styled.button`
   background-color: white;
   color: black;
   font-size: 35px;
+  &:hover {
+    background-color: #e5e5e5;
+  }
 `;
 
 const ButtonDiv = styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
 `;
 
 function BrewingPage() {

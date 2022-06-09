@@ -17,12 +17,23 @@ const DivT = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
-  /* background-image: url("https://i.pinimg.com/564x/14/eb/75/14eb75ce5f6315f5f2b4f446c16c9aba.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   h1 {
     margin-top: 20px;
+  }
+
+  @media (min-width: 650px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
+    background-repeat: repeat;
+    height: 100vh;
+    margin: 2px;
+    border: 6px;
   }
 `;
 
@@ -52,21 +63,25 @@ function CoffeesPage() {
 
   return (
     <DivT>
-      <h1>Ours Coffee's</h1>
-      {coffees.map((coffee) => {
-        return (
-          <>
-            <LinkTag>
-              <Link
-                to={`/coffees/${coffee._id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <CoffeeCard key={coffee._id} {...coffee} />
-              </Link>
-            </LinkTag>
-          </>
-        );
-      })}
+      <div>
+        <h1>Our Coffees</h1>
+      </div>
+      <DivT>
+        {coffees.map((coffee) => {
+          return (
+            <>
+              <LinkTag>
+                <Link
+                  to={`/coffees/${coffee._id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <CoffeeCard key={coffee._id} {...coffee} />
+                </Link>
+              </LinkTag>
+            </>
+          );
+        })}
+      </DivT>
     </DivT>
   );
 }
