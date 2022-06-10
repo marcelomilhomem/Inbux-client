@@ -22,7 +22,7 @@ const DetailTag = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 90%;  
 
     @media (min-width: 650px) {
       width: 50%;
