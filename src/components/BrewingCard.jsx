@@ -2,16 +2,15 @@ import styled from "styled-components";
 import React from "react";
 
 const CardTag = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-
   .brewingImg {
-    width: 250px;
+    width: 150px;
   }
 
-
+  @media (min-width: 700px) {
+    .brewingImg {
+      width: 300px;
+    }
+  }
 `;
 
 function BrewingCard(props) {
