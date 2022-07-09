@@ -16,7 +16,7 @@ const DivT = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
+  background-image: url("https://courses-emea.starbucksglobalacademy.com/assets/courseware/v1/ffdb98b2d191a18439e8870d7a830229/asset-v1:EMEA+CA100+2019+type@asset+block/CA100_M2.1_TheGIantPotentialoftheTinyCoffeeBean0_reduced.jpg");
   background-attachment: fixed;
 
   h1 {
@@ -28,8 +28,10 @@ const DivT = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("https://stories.starbucks.com/wp-content/uploads/2019/01/artist-series-1-009-1.jpg");
-    background-repeat: repeat;
+    background-image: url("https://courses-emea.starbucksglobalacademy.com/assets/courseware/v1/ffdb98b2d191a18439e8870d7a830229/asset-v1:EMEA+CA100+2019+type@asset+block/CA100_M2.1_TheGIantPotentialoftheTinyCoffeeBean0_reduced.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     margin: 2px;
     border: 6px;
@@ -61,10 +63,6 @@ function CoffeesPage() {
   }, []);
 
   return (
-    <DivT>
-      <div>
-        <h1>Our Coffees</h1>
-      </div>
       <DivT>
         {coffees.map((coffee) => {
           return (
@@ -81,7 +79,6 @@ function CoffeesPage() {
           );
         })}
       </DivT>
-    </DivT>
   );
 }
 

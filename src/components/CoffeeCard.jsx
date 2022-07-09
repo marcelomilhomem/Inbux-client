@@ -5,10 +5,10 @@ const CardTag = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 290px;
+  width: 320px;
 
   &:hover {
     background-color: white;
