@@ -10,6 +10,7 @@ const ButtonTag = styled.button`
   color: white;
   border-radius: 20px;
   padding: 10px 25px;
+  margin-bottom: 10px;
 
   &:hover {
     background-color: #1e3932;
@@ -66,9 +67,10 @@ const HomeTag = styled.div`
   }
 
   .Img {
-    width: 350px;
-    height: 280px;
-    border-radius: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .firstSection {
@@ -167,7 +169,6 @@ function WelcomePage() {
               <ButtonTag>Coffees</ButtonTag>
             </Link>
           )}
-          <p>12 Coffess</p>
         </div>
         <hr />
         <div className="tristan-div">
